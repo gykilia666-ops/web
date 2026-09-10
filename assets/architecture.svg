@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="800" height="300" viewBox="0 0 800 300"
+     role="img" aria-labelledby="title description">
+  <title id="title">Схема работы PHP-приложения</title>
+  <desc id="description">
+    Браузер обменивается HTTP-сообщениями с сервером PHP.
+    Сервер при необходимости обращается к базе данных.
+  </desc>
+
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8"
+            refX="7" refY="4" orient="auto-start-reverse">
+      <path d="M0 0L8 4L0 8Z" fill="#6471a7"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="300" rx="18" fill="#f0f3fc"/>
+
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="400" y="40" font-size="21"
+          font-weight="bold" fill="#34406a">
+      Как работает веб-приложение
+    </text>
+
+    <rect x="30" y="89" width="180" height="132"
+          rx="12" fill="#ffffff" stroke="#929fcd" stroke-width="2"/>
+    <rect x="58" y="110" width="124" height="62"
+          rx="5" fill="#e7edfc" stroke="#929fcd"/>
+    <path d="M104 172V182H137V172M88 183H152"
+          fill="none" stroke="#6471a7" stroke-width="3"/>
+    <text x="120" y="205" font-size="17" fill="#34406a">Браузер</text>
+
+    <rect x="310" y="89" width="180" height="132"
+          rx="12" fill="#505e99"/>
+    <text x="400" y="137" font-size="23"
+          font-weight="bold" fill="#ffffff">Сервер</text>
+    <text x="400" y="181" font-size="36"
+          font-weight="bold" fill="#ffffff">PHP</text>
+
+    <rect x="590" y="89" width="180" height="132"
+          rx="12" fill="#ffffff" stroke="#929fcd" stroke-width="2"/>
+    <path d="M642 126V165C642 185 718 185 718 165V126"
+          fill="#dce5fb" stroke="#6471a7" stroke-width="2"/>
+    <ellipse cx="680" cy="126" rx="38" ry="12"
+             fill="#edf2ff" stroke="#6471a7" stroke-width="2"/>
+    <text x="680" y="205" font-size="17" fill="#34406a">База данных</text>
+
+    <path d="M218 137H300" stroke="#6471a7"
+          stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M300 181H218" stroke="#6471a7"
+          stroke-width="3" marker-end="url(#arrow)"/>
+
+    <text x="260" y="124" font-size="13" fill="#46547d">Запрос</text>
+    <text x="260" y="206" font-size="13" fill="#46547d">Ответ</text>
+
+    <path d="M502 151H578" stroke="#6471a7"
+          stroke-width="3" marker-start="url(#arrow)"
+          marker-end="url(#arrow)"/>
+    <text x="540" y="128" font-size="13" fill="#46547d">Данные</text>
+
+    <text x="400" y="267" font-size="15" fill="#566482">
+      Браузер получает результат, а не исходный PHP-код
+    </text>
+  </g>
+</svg>

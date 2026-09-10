@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Краткая история PHP, обзор возможностей языка и примеры кода."
+  >
+
+  <title>PHP — история, возможности и примеры кода</title>
+
+  <!-- normalize.css обязательно подключается перед основными стилями. -->
+  <link rel="stylesheet" href="assets/normalize.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body id="top">
+  <a class="skip-link" href="#main">Перейти к статье</a>
+
+  <header class="site-header">
+    <div class="container">
+      <p class="eyebrow">История языков программирования / Вариант 5</p>
+      <h1>PHP: от персональной страницы до веб-приложений</h1>
+      <p class="lead">
+        Как небольшой набор инструментов превратился в язык
+        серверной разработки.
+      </p>
+
+      <div class="badges" aria-label="Темы статьи">
+        <span class="badge">История</span>
+        <span class="badge">Веб-разработка</span>
+        <span class="badge">Примеры PHP 8</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="container">
+    <article class="article" aria-label="Статья о языке PHP">
+      <nav class="toc" aria-labelledby="toc-title">
+        <h2 id="toc-title">Содержание</h2>
+        <ul class="standard-list">
+          <li><a href="#history">История создания</a></li>
+          <li><a href="#overview">Краткий обзор языка</a></li>
+          <li><a href="#examples">Примеры кода</a></li>
+          <li><a href="#sources">Источники</a></li>
+          <li><a href="#inventory">Использованные теги и CSS-свойства</a></li>
+        </ul>
+      </nav>
+
+      <section id="history" class="section" aria-labelledby="history-title">
+        <h2 id="history-title">1. История создания</h2>
+
+        <figure class="illustration illustration--left">
+          <img
+            src="assets/history.svg"
+            width="480"
+            height="300"
+            alt="Историческая схема: PHP Tools в 1995 году и PHP 3 в 1998 году"
+          >
+          <figcaption>
+            Первые этапы развития PHP. Авторская схема.
+          </figcaption>
+        </figure>
+
+        <p>
+          История PHP началась в <time datetime="1994">1994 году</time>,
+          когда программист <strong>Расмус Лердорф</strong> создал набор
+          инструментов для своей персональной веб-страницы. Они помогали
+          учитывать посещения его онлайн-резюме. Развивая эти инструменты,
+          Лердорф реализовал их на языке C и добавил возможности работы
+          с формами и базами данных.
+        </p>
+
+        <p>
+          <time datetime="1995-06-08">8 июня 1995 года</time> исходный код
+          PHP Tools был опубликован. Название PHP первоначально
+          связывалось с выражением <i lang="en">Personal Home Page</i> —
+          «персональная домашняя страница». Публикация позволила другим
+          разработчикам использовать инструменты, исправлять ошибки
+          и предлагать улучшения.
+        </p>
+
+        <p>
+          Важным этапом стала работа <strong>Энди Гутманса</strong>
+          и <strong>Зеева Сураски</strong>. В 1997 году они начали
+          переработку анализатора языка. Результатом сотрудничества
+          с Лердорфом стала версия PHP 3, выпущенная в 1998 году.
+          Название стало рекурсивным сокращением:
+          <em lang="en">PHP: Hypertext Preprocessor</em>.
+        </p>
+
+        <p>
+          В PHP 4 появился <strong>Zend Engine</strong>, а PHP 5
+          значительно расширил объектную модель. PHP 7 повысил
+          производительность и развил средства типизации. В PHP 8
+          появились объединения типов, выражение <code>match</code>,
+          именованные аргументы и другие возможности.
+        </p>
+
+        <div class="clear-floats">
+          <h3>Основные этапы развития</h3>
+
+          <div
+            class="table-wrapper"
+            role="region"
+            aria-labelledby="versions-caption"
+            tabindex="0"
+          >
+            <table>
+              <caption id="versions-caption">
+                Таблица 1. Ключевые версии PHP
+              </caption>
+
+              <colgroup>
+                <col class="year-column">
+                <col class="version-column">
+                <col>
+              </colgroup>
+
+              <thead>
+                <tr>
+                  <th scope="col">Год</th>
+                  <th scope="col">Версия</th>
+                  <th scope="col">Основные изменения</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td>1995</td>
+                  <th scope="row">PHP Tools</th>
+                  <td>Публичное распространение исходного кода инструментов.</td>
+                </tr>
+                <tr>
+                  <td>1998</td>
+                  <th scope="row">PHP 3</th>
+                  <td>Переработка языка, расширяемость, новое значение названия.</td>
+                </tr>
+                <tr>
+                  <td>2000</td>
+                  <th scope="row">PHP 4</th>
+                  <td>Использование Zend Engine.</td>
+                </tr>
+                <tr>
+                  <td>2004</td>
+                  <th scope="row">PHP 5</th>
+                  <td>Новая объектная модель и Zend Engine II.</td>
+                </tr>
+                <tr>
+                  <td>2015</td>
+                  <th scope="row">PHP 7</th>
+                  <td>Рост производительности, скалярные типы и типы возврата.</td>
+                </tr>
+                <tr>
+                  <td>2020</td>
+                  <th scope="row">PHP 8</th>
+                  <td>JIT, атрибуты, union types, match, именованные аргументы.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <blockquote>
+          <p>
+            «PHP (рекурсивный акроним словосочетания PHP: Hypertext
+            Preprocessor) — это распространённый язык программирования
+            общего назначения с открытым исходным кодом».
+          </p>
+          <cite>
+            <a href="https://www.php.net/manual/ru/intro-whatis.php">
+              Руководство PHP: «Что такое PHP?»
+            </a>
+          </cite>
+        </blockquote>
+
+        <p class="section-end"><a href="#top">К началу ↑</a></p>
+      </section>
+
+      <section id="overview" class="section" aria-labelledby="overview-title">
+        <h2 id="overview-title">2. Краткий обзор языка</h2>
+
+        <figure class="illustration illustration--right">
+          <img
+            src="assets/php.svg"
+            width="480"
+            height="300"
+            loading="lazy"
+            alt="Иллюстрация PHP с фрагментом команды echo"
+          >
+          <figcaption>
+            PHP особенно широко применяется на стороне сервера.
+          </figcaption>
+        </figure>
+
+        <p>
+          <strong>PHP</strong> — язык общего назначения, особенно
+          подходящий для веб-разработки. Обычно программа выполняется
+          на сервере, а браузер получает её результат: например,
+          <abbr title="HyperText Markup Language">HTML</abbr>-страницу
+          или данные в формате
+          <abbr title="JavaScript Object Notation">JSON</abbr>.
+          Исходный PHP-код при корректной настройке сервера пользователю
+          не передаётся.
+        </p>
+
+        <p>
+          Для PHP характерна <em>динамическая типизация</em>:
+          тип значения переменной может меняться во время выполнения.
+          При этом язык поддерживает объявления типов параметров,
+          возвращаемых значений и свойств. Режим
+          <code>strict_types</code> ужесточает правила для скалярных
+          аргументов и возвращаемых значений, но
+          <mark>не превращает PHP в статически типизированный язык</mark>.
+        </p>
+
+        <p>
+          Синтаксис PHP имеет общие черты с C: используются фигурные
+          скобки, круглые скобки в условиях и точка с запятой.
+          Имена переменных начинаются со знака <code>$</code>.
+          Язык поддерживает процедурный и объектно-ориентированный
+          подходы, а также функции как значения и замыкания.
+        </p>
+
+        <h3 class="clear-floats">Где применяется PHP</h3>
+
+        <!-- Маркированный список со стандартным маркером. -->
+        <ul class="standard-list">
+          <li>Создание динамических сайтов и веб-приложений.</li>
+          <li>Обработка форм, управление сессиями и авторизацией.</li>
+          <li>Разработка серверных API и работа с базами данных.</li>
+          <li>Написание консольных утилит и фоновых задач.</li>
+        </ul>
+
+        <h3>Характерные возможности</h3>
+
+        <!-- Маркер каждого пункта — локальная SVG-картинка. -->
+        <ul class="image-list">
+          <li>Встраивание PHP-кода непосредственно в HTML-документ.</li>
+          <li>Поддержка классов, интерфейсов, трейтов и пространств имён.</li>
+          <li>Работа с зависимостями через менеджер пакетов Composer.</li>
+          <li>Большая экосистема, включая Laravel, Symfony и WordPress.</li>
+        </ul>
+
+        <figure class="illustration illustration--center">
+          <img
+            src="assets/architecture.svg"
+            width="800"
+            height="300"
+            loading="lazy"
+            alt="Схема: браузер отправляет HTTP-запрос серверу с PHP, сервер обращается к базе данных"
+          >
+          <figcaption>
+            Упрощённая схема веб-приложения. База данных используется
+            только тогда, когда она необходима приложению.
+          </figcaption>
+        </figure>
+
+        <h3>Как обрабатывается запрос</h3>
+
+        <!-- Нумерованный список. -->
+        <ol class="steps">
+          <li>Браузер отправляет HTTP-запрос веб-серверу.</li>
+          <li>Веб-сервер передаёт выполнение обработчику PHP.</li>
+          <li>Программа выполняет вычисления и при необходимости запросы к БД.</li>
+          <li>Сервер возвращает сформированный HTTP-ответ браузеру.</li>
+        </ol>
+
+        <dl class="terms">
+          <dt>Интерпретатор</dt>
+          <dd>
+            Среда выполнения PHP: исходный код компилируется во внутренние
+            инструкции, которые выполняет движок.
+          </dd>
+
+          <dt>Composer</dt>
+          <dd>Менеджер зависимостей для установки библиотек PHP.</dd>
+
+          <dt>PHP-FPM</dt>
+          <dd>
+            Менеджер процессов FastCGI, часто применяемый для выполнения
+            PHP за веб-сервером.
+          </dd>
+        </dl>
+
+        <aside class="note">
+          <h3>О безопасности</h3>
+          <p>
+            Данные пользователя необходимо проверять. При выводе в HTML
+            требуется экранирование, а при работе с SQL — подготовленные
+            запросы. Пример экранирования приведён
+            <a href="#example-html">в разделе с кодом</a>.
+          </p>
+        </aside>
+
+        <p class="section-end"><a href="#top">К началу ↑</a></p>
+      </section>
+
+      <section id="examples" class="section" aria-labelledby="examples-title">
+        <h2 id="examples-title">3. Примеры кода</h2>
+
+        <p>
+          Примеры рассчитаны на <strong>PHP 8.0 и новее</strong>.
+          Подсветка выполнена средствами HTML и CSS:
+          ключевые слова, строки, переменные и комментарии имеют
+          разные цвета.
+        </p>
+
+        <h3>Пример 1. Функция и типы</h3>
+
+        <p>
+          Функция <code>greet()</code> принимает имя и возвращает строку.
+          Переменная <var>$name</var> обозначает переданный аргумент.
+        </p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span>hello.php</span>
+            <span>PHP 8+</span>
+          </div>
+          <pre aria-label="PHP-код функции приветствия"><code><span class="token-tag">&lt;?php</span>
+
+<span class="token-keyword">declare</span>(strict_types<span class="token-operator">=</span><span class="token-number">1</span>);
+
+<span class="token-comment">// Объявления типов параметра и результата.</span>
+<span class="token-keyword">function</span> <span class="token-function">greet</span>(<span class="token-type">string</span> <span class="token-variable">$name</span>): <span class="token-type">string</span>
+{
+    <span class="token-keyword">return</span> <span class="token-string">"Привет, "</span> <span class="token-operator">.</span> <span class="token-variable">$name</span> <span class="token-operator">.</span> <span class="token-string">"!"</span>;
+}
+
+<span class="token-keyword">echo</span> <span class="token-function">greet</span>(<span class="token-string">"Анна"</span>);</code></pre>
+        </div>
+
+        <p class="result">
+          Результат: <samp>Привет, Анна!</samp>
+        </p>
+
+        <details>
+          <summary>Как запустить пример?</summary>
+          <p>
+            Установите PHP, сохраните код в файле <code>hello.php</code>
+            и выполните в терминале команду <kbd>php hello.php</kbd>.
+          </p>
+          <p>
+            Завершающий тег <code>?&gt;</code> в файле, содержащем только
+            PHP-код, обычно опускают, чтобы избежать случайного вывода
+            пробелов после него.
+          </p>
+        </details>
+
+        <h3>Пример 2. Массив и цикл</h3>
+
+        <p>
+          Массив хранит названия технологий, а цикл
+          <code>foreach</code> последовательно перебирает его элементы.
+        </p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span>languages.php</span>
+            <span>Массивы</span>
+          </div>
+          <pre aria-label="PHP-код перебора массива"><code><span class="token-tag">&lt;?php</span>
+
+<span class="token-variable">$languages</span> <span class="token-operator">=</span> [
+    <span class="token-string">"PHP"</span>,
+    <span class="token-string">"JavaScript"</span>,
+    <span class="token-string">"Python"</span>,
+];
+
+<span class="token-keyword">foreach</span> (<span class="token-variable">$languages</span> <span class="token-keyword">as</span> <span class="token-variable">$language</span>) {
+    <span class="token-keyword">echo</span> <span class="token-variable">$language</span> <span class="token-operator">.</span> <span class="token-string">"\n"</span>;
+}</code></pre>
+        </div>
+
+        <p>Результат в терминале:</p>
+        <pre class="output"><samp>PHP
+JavaScript
+Python</samp></pre>
+
+        <h3 id="example-html">Пример 3. Вывод текста в HTML</h3>
+
+        <p>
+          Перед вставкой строки в текст HTML-элемента используется
+          <code>htmlspecialchars()</code>. Символы
+          <code>&lt;</code> и <code>&gt;</code> преобразуются в
+          HTML-сущности и не воспринимаются как разметка.
+        </p>
+
+        <div class="code-block">
+          <div class="code-header">
+            <span>page.php</span>
+            <span>HTML-экранирование</span>
+          </div>
+          <pre aria-label="PHP-код безопасного вывода текста в HTML"><code><span class="token-tag">&lt;?php</span>
+
+<span class="token-comment">// В реальном приложении строка может поступить от пользователя.</span>
+<span class="token-variable">$name</span> <span class="token-operator">=</span> <span class="token-string">"&lt;Анна&gt;"</span>;
+
+<span class="token-variable">$safeName</span> <span class="token-operator">=</span> <span class="token-function">htmlspecialchars</span>(
+    <span class="token-variable">$name</span>,
+    <span class="token-constant">ENT_QUOTES</span> <span class="token-operator">|</span> <span class="token-constant">ENT_SUBSTITUTE</span>,
+    <span class="token-string">"UTF-8"</span>
+);
+
+<span class="token-keyword">echo</span> <span class="token-string">"&lt;p&gt;Привет, "</span> <span class="token-operator">.</span> <span class="token-variable">$safeName</span> <span class="token-operator">.</span> <span class="token-string">"!&lt;/p&gt;"</span>;</code></pre>
+        </div>
+
+        <p class="result">
+          В браузере: <samp>Привет, &lt;Анна&gt;!</samp>
+        </p>
+
+        <p>
+          Этот приём подходит для текстового содержимого HTML.
+          Для других контекстов, например JavaScript или URL,
+          требуются соответствующие правила обработки данных.
+        </p>
+
+        <p class="section-end"><a href="#top">К началу ↑</a></p>
+      </section>
+
+      <section id="sources" class="section" aria-labelledby="sources-title">
+        <h2 id="sources-title">4. Использованные источники</h2>
+
+        <ul class="standard-list">
+          <li>
+            <a href="https://www.php.net/manual/ru/history.php.php">
+              PHP.net — история PHP
+            </a>.
+          </li>
+          <li>
+            <a href="https://www.php.net/manual/ru/intro-whatis.php">
+              PHP.net — что такое PHP
+            </a>.
+          </li>
+          <li>
+            <a href="https://www.php.net/releases/">
+              PHP.net — архив выпусков
+            </a>.
+          </li>
+          <li>
+            <a href="https://ru.wikipedia.org/wiki/PHP">
+              Википедия — PHP
+            </a>.
+          </li>
+        </ul>
+
+        <p>
+          <small>
+            Иллюстрации выполнены специально для учебной статьи
+            в формате SVG; они не являются официальными логотипами.
+          </small>
+        </p>
+      </section>
+
+      <section id="inventory" class="section" aria-labelledby="inventory-title">
+        <h2 id="inventory-title">5. Использованные теги и CSS-свойства</h2>
+
+        <p>
+          Ниже перечислены уникальные HTML-теги страницы и CSS-свойства
+          файла <code>styles.css</code>. Теги внутри SVG-файлов
+          и свойства стороннего <code>normalize.css</code> не учитываются.
+        </p>
+
+        <h3>HTML-теги — 54</h3>
+        <p class="inventory">
+          <code>html</code>, <code>head</code>, <code>meta</code>,
+          <code>title</code>, <code>link</code>, <code>body</code>,
+          <code>a</code>, <code>header</code>, <code>div</code>,
+          <code>p</code>, <code>h1</code>, <code>span</code>,
+          <code>main</code>, <code>article</code>, <code>nav</code>,
+          <code>h2</code>, <code>ul</code>, <code>li</code>,
+          <code>section</code>, <code>figure</code>, <code>img</code>,
+          <code>figcaption</code>, <code>time</code>, <code>strong</code>,
+          <code>i</code>, <code>em</code>, <code>code</code>,
+          <code>h3</code>, <code>table</code>, <code>caption</code>,
+          <code>colgroup</code>, <code>col</code>, <code>thead</code>,
+          <code>tr</code>, <code>th</code>, <code>tbody</code>,
+          <code>td</code>, <code>blockquote</code>, <code>cite</code>,
+          <code>abbr</code>, <code>mark</code>, <code>ol</code>,
+          <code>dl</code>, <code>dt</code>, <code>dd</code>,
+          <code>aside</code>, <code>var</code>, <code>pre</code>,
+          <code>samp</code>, <code>details</code>, <code>summary</code>,
+          <code>kbd</code>, <code>small</code>, <code>footer</code>.
+        </p>
+
+        <h3>CSS-свойства — 79</h3>
+        <p class="inventory">
+          <code>box-sizing</code>, <code>scroll-behavior</code>,
+          <code>font-family</code>, <code>font-size</code>,
+          <code>line-height</code>, <code>color</code>,
+          <code>background-color</code>, <code>background-image</code>,
+          <code>margin</code>, <code>min-width</code>,
+          <code>min-height</code>, <code>width</code>,
+          <code>max-width</code>, <code>padding</code>,
+          <code>position</code>, <code>left</code>,
+          <code>top</code>, <code>z-index</code>,
+          <code>transform</code>, <code>transition</code>,
+          <code>border-radius</code>, <code>text-decoration</code>,
+          <code>text-underline-offset</code>,
+          <code>text-decoration-thickness</code>,
+          <code>outline</code>, <code>outline-offset</code>,
+          <code>border-bottom</code>, <code>font-weight</code>,
+          <code>letter-spacing</code>, <code>text-transform</code>,
+          <code>margin-bottom</code>, <code>opacity</code>,
+          <code>display</code>, <code>flex-wrap</code>,
+          <code>gap</code>, <code>border</code>,
+          <code>box-shadow</code>, <code>margin-top</code>,
+          <code>border-left</code>, <code>padding-left</code>,
+          <code>scroll-margin-top</code>, <code>overflow-wrap</code>,
+          <code>height</code>, <code>object-fit</code>,
+          <code>text-align</code>, <code>font-style</code>,
+          <code>float</code>, <code>clear</code>,
+          <code>overflow-x</code>, <code>border-collapse</code>,
+          <code>table-layout</code>, <code>caption-side</code>,
+          <code>vertical-align</code>, <code>border-top</code>,
+          <code>list-style-type</code>, <code>list-style-position</code>,
+          <code>list-style-image</code>, <code>padding-top</code>,
+          <code>padding-bottom</code>, <code>grid-template-columns</code>,
+          <code>align-items</code>, <code>justify-content</code>,
+          <code>white-space</code>, <code>tab-size</code>,
+          <code>word-break</code>, <code>font-variant-ligatures</code>,
+          <code>border-color</code>, <code>cursor</code>,
+          <code>accent-color</code>, <code>text-wrap</code>,
+          <code>text-shadow</code>, <code>user-select</code>,
+          <code>border-spacing</code>, <code>font-variant-numeric</code>,
+          <code>hyphens</code>, <code>content</code>,
+          <code>order</code>, <code>flex-direction</code>,
+          <code>break-inside</code>.
+        </p>
+
+        <p>
+          Дополнительно применены правила <code>@font-face</code>
+          и <code>@media</code>. Дескрипторы подключения шрифта
+          <code>src</code> и <code>font-display</code>
+          в число свойств выше не включены.
+        </p>
+
+        <p class="section-end"><a href="#top">Вернуться к началу ↑</a></p>
+      </section>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>
+        Учебная статья о PHP · HTML и CSS · Вариант 5
+      </small>
+    </div>
+  </footer>
+</body>
+</html>

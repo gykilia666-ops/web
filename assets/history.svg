@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     width="480" height="300" viewBox="0 0 480 300"
+     role="img" aria-labelledby="title description">
+  <title id="title">Первые этапы истории PHP</title>
+  <desc id="description">
+    На временной линии отмечены PHP Tools 1995 года и PHP 3 1998 года.
+  </desc>
+
+  <rect width="480" height="300" rx="18" fill="#eef1fb"/>
+
+  <rect x="36" y="30" width="408" height="152"
+        rx="12" fill="#26334b"/>
+  <path d="M36 62H444" stroke="#586584" stroke-width="2"/>
+
+  <circle cx="54" cy="46" r="5" fill="#ef8a83"/>
+  <circle cx="72" cy="46" r="5" fill="#e7c37a"/>
+  <circle cx="90" cy="46" r="5" fill="#8ac5a0"/>
+
+  <text x="62" y="102" fill="#a6d890"
+        font-family="monospace" font-size="22">&lt;?php</text>
+  <text x="62" y="140" fill="#dce6f7"
+        font-family="monospace" font-size="18">
+    Personal Home Page
+  </text>
+
+  <path d="M80 230H400" stroke="#727bb4"
+        stroke-width="6" stroke-linecap="round"/>
+  <circle cx="110" cy="230" r="10" fill="#505b9b"/>
+  <circle cx="370" cy="230" r="10" fill="#505b9b"/>
+
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="110" y="213" fill="#303a69"
+          font-size="18" font-weight="bold">1995</text>
+    <text x="370" y="213" fill="#303a69"
+          font-size="18" font-weight="bold">1998</text>
+    <text x="110" y="270" fill="#485471" font-size="16">PHP Tools</text>
+    <text x="370" y="270" fill="#485471" font-size="16">PHP 3</text>
+  </g>
+</svg>
