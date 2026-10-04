@@ -1,0 +1,18 @@
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+}
+/* body не создаёт блок: стандартные отступы не влияют на центрирование. */
+body { display: contents; }
+.numbers { display: flex; gap: 40px; }
+.digit { display: flex; flex-direction: column; }
+.row { display: flex; }
+.pixel { width: 40px; height: 40px; flex: 0 0 40px; background-color: #202020; }
+.off { visibility: hidden; }
+@media (max-width: 767px) {
+    .numbers { gap: 24px; }
+    .pixel { width: 24px; height: 24px; flex-basis: 24px; }
+}

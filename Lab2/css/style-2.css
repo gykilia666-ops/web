@@ -1,0 +1,86 @@
+body { margin: 0; background: #000000; font-family: Arial, sans-serif; }
+/* Телефон: ширина меньше 768px. */
+.header .cell { width: 50%; }
+.header .cell-11 { display: none; }
+.pink { flex-direction: column; }
+.pink-stack { display: flex; flex-direction: column; width: 100%; }
+.pink .cell-22 { width: 100%; height: 300px; }
+.green { flex-direction: column; }
+.green-main { display: flex; flex-direction: column; width: 100%; }
+.green-row .cell { width: 50%; }
+.green-side { display: flex; flex-direction: column; width: 100%; }
+.cell-30 { display: none; }
+.orange-slot { display: flex; justify-content: center; width: 50%; }
+.orange-slot:first-child { display: none; }
+.orange-slot .cell { width: 100%; }
+.brown { flex-wrap: wrap; }
+.brown > .cell-60, .brown > .cell-61 { width: 50%; order: 0; }
+.brown > .cell-62 { width: 100%; height: 300px; order: 2; }
+.brown-right, .brown-tail { display: contents; }
+.brown .cell-63 { width: 100%; height: 300px; order: 1; }
+.brown .cell-64, .brown .cell-65 { width: 50%; order: 3; }
+/* Планшет: 768–1199px. */
+@media (min-width: 768px) {
+    .tile { font-size: 14px; }
+    .header .cell { width: calc(100% / 3); }
+    .header .cell-11 { display: flex; }
+    .pink { flex-direction: row; height: 300px; }
+    .pink-stack, .pink .cell-22 { width: 50%; }
+    .green { flex-direction: row; height: 450px; }
+    .green-main { width: 75%; }
+    .green-side { width: 25%; }
+    .green-side .cell-31 { height: 450px; }
+    .green-row .cell { width: calc(100% / 3); }
+    .green-row .cell-33, .green-row .cell-34, .green-row .cell-37 { width: calc(100% * 2 / 3); }
+    .orange-slot, .orange-slot:first-child { display: flex; width: calc(100% / 3); }
+    .brown { height: 300px; flex-direction: row; }
+    .brown > .cell-60, .brown > .cell-61 { width: 25%; order: 0; }
+    .brown > .cell-62 { width: 50%; height: 150px; order: 0; }
+    .brown-right { display: flex; width: 100%; height: 150px; }
+    .brown .cell-63 { width: 50%; height: 150px; order: 0; }
+    .brown-tail { display: flex; width: 50%; height: 150px; }
+    .brown .cell-64, .brown .cell-65 { width: 50%; order: 0; }
+}
+/* Компьютер: ширина от 1200px. */
+@media (min-width: 1200px) {
+    .tile { font-size: 16px; }
+    .header .cell-10, .header .cell-12 { width: 25%; }
+    .header .cell-11 { width: 50%; }
+    .pink-stack { width: calc(100% * 2 / 3); }
+    .pink .cell-22 { width: calc(100% / 3); }
+    .cell-30 { display: flex; }
+    .green-side .cell-31 { height: 300px; }
+    .green-row .cell { width: 25%; }
+    .green-row .cell-33, .green-row .cell-34, .green-row .cell-37 { width: 75%; }
+    .orange-slot .cell { width: 50%; }
+    .brown { flex-direction: column; }
+    .brown > .cell-62 { width: 25%; height: 300px; }
+    .brown-right { width: 50%; height: 300px; flex-direction: column; }
+    .brown .cell-63 { width: 100%; }
+    .brown-tail { width: 100%; }
+}
+
+/* Цвета блоков варианта 5. */
+.cell-10 .tile { background-color: #CD5C5C; }
+.cell-11 .tile { background-color: #DC143C; }
+.cell-12 .tile { background-color: #8B0000; }
+.cell-20 .tile { background-color: #FFC0CB; }
+.cell-21 .tile { background-color: #FF69B4; }
+.cell-22 .tile { background-color: #C71585; }
+.cell-30 .tile { background-color: #ADFF2F; }
+.cell-31 .tile { background-color: #00FF00; }
+.cell-32 .tile { background-color: #32CD32; }
+.cell-33 .tile { background-color: #00FA9A; }
+.cell-34 .tile { background-color: #2E8B57; }
+.cell-35 .tile { background-color: #006400; }
+.cell-36 .tile { background-color: #9ACD32; }
+.cell-37 .tile { background-color: #808000; }
+.cell-50 .tile { background-color: #FFA07A; }
+.cell-51 .tile { background-color: #FF4500; }
+.cell-52 .tile { background-color: #FFA500; }
+.cell-60 .tile { background-color: #BC8F8F; }
+.cell-61 .tile { background-color: #F4A460; }
+.cell-62 .tile { background-color: #D2691E; }
+.cell-63 .tile { background-color: #8B4513; }
+.cell-64 .tile { background-color: #A52A2A; }
+.cell-65 .tile { background-color: #800000; }
