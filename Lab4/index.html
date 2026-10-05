@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Вариант 5 — Яхта и механические часы</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="page-header">
+      <span class="badge">Лабораторная работа · Вариант 5</span>
+      <h1>Яхта и механические часы</h1>
+      <p>Рисунок из геометрических CSS-фигур и анимация стрелок.</p>
+    </header>
+
+    <section class="card" aria-labelledby="yacht-title">
+      <div class="card-heading">
+        <h2 id="yacht-title">01. Яхта</h2>
+        <span></span>
+      </div>
+      <div class="sea-scene" role="img" aria-label="Белая парусная яхта с двумя парусами на синем море. В небе солнце и облака.">
+        <div class="sun"></div>
+        <div class="cloud cloud-one"></div>
+        <div class="cloud cloud-two"></div>
+        <div class="sea"></div>
+        <div class="yacht">
+          <div class="mast"></div>
+          <div class="sail sail-left"></div>
+          <div class="sail sail-right"></div>
+          <div class="flag"></div>
+          <div class="boom"></div>
+          <div class="cabin">
+            <span class="porthole"></span>
+            <span class="porthole"></span>
+            <span class="porthole"></span>
+          </div>
+          <div class="hull"></div>
+          <div class="hull-stripe"></div>
+          <div class="water-shadow"></div>
+        </div>
+        <div class="wave wave-one"></div>
+        <div class="wave wave-two"></div>
+        <div class="wave wave-three"></div>
+      </div>
+      <p class="description">Паруса, корпус, мачта, иллюминаторы, облака и волны созданы средствами CSS.</p>
+    </section>
+
+    <section class="card" aria-labelledby="clock-title">
+      <div class="card-heading">
+        <h2 id="clock-title">02. Механические часы</h2>
+        <span>CSS-анимация</span>
+      </div>
+      <div class="clock-scene">
+        <div class="clock" id="clock" role="img" aria-label="Механические часы с вращающимися часовой, минутной и секундной стрелками">
+          <div class="dial">
+            <div class="minute-marks"></div>
+            <div class="hour-marks"></div>
+            <span class="number number-1"><span>1</span></span>
+            <span class="number number-2"><span>2</span></span>
+            <span class="number number-3"><span>3</span></span>
+            <span class="number number-4"><span>4</span></span>
+            <span class="number number-5"><span>5</span></span>
+            <span class="number number-6"><span>6</span></span>
+            <span class="number number-7"><span>7</span></span>
+            <span class="number number-8"><span>8</span></span>
+            <span class="number number-9"><span>9</span></span>
+            <span class="number number-10"><span>10</span></span>
+            <span class="number number-11"><span>11</span></span>
+            <span class="number number-12"><span>12</span></span>
+            <div class="clock-brand">CSS CLOCK</div>
+            <div class="clock-caption">VARIANT 05</div>
+            <div class="hand hour-hand"></div>
+            <div class="hand minute-hand"></div>
+            <div class="hand second-hand"></div>
+            <div class="center-pin"></div>
+          </div>
+        </div>
+        <div class="controls">
+          <button id="pause-button" type="button" aria-pressed="false">Пауза</button>
+          <button id="sync-button" type="button" class="secondary">Текущее время</button>
+        </div>
+        <p class="clock-status" id="clock-status" role="status">Часы идут. Время установлено по вашему устройству.</p>
+      </div>
+      <p class="description">Вращение стрелок: <code>animation</code>, <code>transform</code>, <code>@keyframes</code>. Плавное изменение кнопок: <code>transition</code>.</p>
+    </section>
+    <footer>HTML + CSS + JavaScript · Без библиотек и внешних ресурсов</footer>
+  </main>
+</body>
+</html>

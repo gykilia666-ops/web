@@ -1,0 +1,263 @@
+/* Общие стили */
+* { box-sizing: border-box; }
+:root { color-scheme: light; }
+body {
+  margin: 0;
+  background: #edf3f8;
+  color: #203449;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.page { width: min(100% - 32px, 1000px); margin: 42px auto; }
+.page-header { margin-bottom: 28px; }
+.badge { color: #37617e; font-size: 14px; letter-spacing: .04em; }
+h1 { margin: 12px 0; font-size: clamp(26px, 5vw, 42px); }
+.page-header p { margin: 0; color: #607388; line-height: 1.6; }
+.card {
+  margin-bottom: 28px;
+  overflow: hidden;
+  background: white;
+  border: 1px solid #dce5ed;
+  border-radius: 22px;
+  box-shadow: 0 12px 32px #2034490b;
+}
+.card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 22px 26px;
+}
+h2 { margin: 0; font-size: 22px; }
+.card-heading > span { font-size: 13px; color: #607388; }
+.description { margin: 0; padding: 20px 26px; font-size: 14px; line-height: 1.7; color: #607388; }
+code { color: #235c7a; }
+footer { text-align: center; font-size: 13px; color: #607388; }
+
+/* Задание 1: яхта. Все элементы — HTML-блоки и CSS-фигуры. */
+.sea-scene {
+  position: relative;
+  height: clamp(310px, 50vw, 460px);
+  overflow: hidden;
+  background: linear-gradient(#aee3fb, #e6f8ff 70%);
+}
+.sun {
+  position: absolute;
+  top: 8%; right: 12%;
+  width: 72px; height: 72px;
+  border-radius: 50%;
+  background: #ffd773;
+  box-shadow: 0 0 0 14px #ffd77330, 0 0 0 28px #ffd77315;
+}
+.cloud {
+  position: absolute;
+  width: 130px; height: 30px;
+  border-radius: 40px;
+  background: #ffffffd9;
+}
+.cloud::before, .cloud::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: inherit;
+}
+.cloud::before { width: 55px; height: 55px; left: 23px; bottom: 0; }
+.cloud::after { width: 42px; height: 42px; right: 18px; bottom: 0; }
+.cloud-one { top: 19%; left: 9%; }
+.cloud-two { top: 30%; right: 23%; transform: scale(.72); }
+.sea {
+  position: absolute;
+  inset: 70% 0 0;
+  background: linear-gradient(#32b7d5, #137eae);
+}
+.yacht {
+  position: absolute;
+  bottom: 17%; left: 50%;
+  width: min(78%, 470px);
+  aspect-ratio: 1.65;
+  transform: translateX(-50%);
+  transform-origin: 50% 92%;
+  animation: yacht-rock 5s ease-in-out infinite;
+}
+.mast {
+  position: absolute;
+  left: 48%; top: 0;
+  width: 1.6%; height: 83%;
+  border-radius: 4px;
+  background: #86664f;
+  z-index: 3;
+}
+.sail {
+  position: absolute;
+  background: linear-gradient(110deg, #fff, #deedf4);
+  filter: drop-shadow(0 3px 2px #163d5820);
+}
+.sail-left {
+  left: 8%; top: 7%; width: 38%; height: 63%;
+  clip-path: polygon(100% 0, 100% 100%, 0 100%);
+}
+.sail-right {
+  left: 52%; top: 13%; width: 37%; height: 57%;
+  clip-path: polygon(0 0, 100% 100%, 0 100%);
+  background: linear-gradient(100deg, #eaf3f8, #fff);
+}
+.flag {
+  position: absolute;
+  top: 1%; left: 49.6%; width: 13%; height: 8%;
+  background: #f17461;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  z-index: 4;
+}
+.boom { position: absolute; left: 8%; top: 71%; width: 82%; height: 1.6%; background: #86664f; z-index: 4; }
+.cabin {
+  position: absolute;
+  left: 31%; top: 74%; width: 34%; height: 13%;
+  display: flex; align-items: center; justify-content: space-evenly;
+  border-radius: 18px 25px 0 0;
+  background: #f8f7ed;
+  z-index: 4;
+}
+.porthole { width: 15%; aspect-ratio: 1; border: 3px solid #426e86; border-radius: 50%; background: #8fd3ef; }
+.hull {
+  position: absolute;
+  left: 0; top: 85%; width: 100%; height: 19%;
+  clip-path: polygon(0 0, 100% 0, 83% 100%, 16% 100%);
+  background: linear-gradient(#fff, #e5edf1);
+  z-index: 5;
+}
+.hull-stripe {
+  position: absolute;
+  left: 4%; top: 90%; width: 92%; height: 6%;
+  clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+  background: #224e70;
+  z-index: 6;
+}
+.water-shadow { position: absolute; left: 12%; top: 102%; width: 76%; height: 7%; border-radius: 50%; background: #075c853a; }
+.wave { position: absolute; height: 5px; border-radius: 50%; background: #ffffff65; animation: wave-drift 4s ease-in-out infinite; }
+.wave-one { bottom: 13%; left: 10%; width: 24%; }
+.wave-two { bottom: 20%; right: 9%; width: 18%; animation-delay: -1.5s; }
+.wave-three { bottom: 7%; right: 28%; width: 28%; animation-delay: -3s; }
+@keyframes yacht-rock {
+  0%, 100% { transform: translateX(-50%) translateY(0) rotate(-2deg); }
+  50% { transform: translateX(-50%) translateY(7px) rotate(2deg); }
+}
+@keyframes wave-drift {
+  0%, 100% { transform: translateX(-12px) scaleX(.9); opacity: .45; }
+  50% { transform: translateX(12px) scaleX(1.1); opacity: .9; }
+}
+
+/* Задание 2: механические часы */
+.clock-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 36px 16px 24px;
+  background: radial-gradient(circle at center, #fff, #eef3f7);
+}
+.clock {
+  width: min(100%, 370px);
+  aspect-ratio: 1;
+  padding: 13px;
+  border-radius: 50%;
+  background: linear-gradient(140deg, #58768b, #172c40 55%, #7b94a5);
+  box-shadow: 0 18px 35px #18344b30, inset 0 0 0 2px #ffffff50;
+}
+.dial {
+  position: relative;
+  width: 100%; height: 100%;
+  border: 4px solid #cad5de;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fffdf8, #f3f0e8);
+  box-shadow: inset 0 0 14px #19334720;
+}
+.minute-marks, .hour-marks {
+  position: absolute;
+  inset: 4%;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from -0.5deg, #526478 0deg 1deg, transparent 1deg 6deg);
+}
+.minute-marks::after, .hour-marks::after {
+  content: "";
+  position: absolute;
+  inset: 3%;
+  border-radius: 50%;
+  background: #f6f3ec;
+}
+.hour-marks { background: repeating-conic-gradient(from -1deg, #23384b 0deg 2deg, transparent 2deg 30deg); }
+.hour-marks::after { inset: 6%; }
+.number {
+  position: absolute;
+  inset: 12%;
+  text-align: center;
+  font-size: clamp(16px, 4.5vw, 24px);
+  font-weight: 700;
+  transform: rotate(calc(var(--n) * 30deg));
+}
+.number > span { display: inline-block; transform: rotate(calc(var(--n) * -30deg)); }
+.clock-brand, .clock-caption { position: absolute; width: 100%; text-align: center; color: #75818a; }
+.clock-brand { top: 32%; font-size: 12px; letter-spacing: 2px; }
+.clock-caption { top: 65%; font-size: 10px; letter-spacing: 2px; }
+.hand {
+  --start: 0deg;
+  position: absolute;
+  left: 50%; bottom: 50%;
+  border-radius: 6px 6px 2px 2px;
+  transform-origin: 50% 100%;
+  transform: translateX(-50%) rotate(var(--start));
+  animation-name: hand-turn;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.hour-hand { width: 8px; height: 24%; background: #243c51; animation-duration: 43200s; z-index: 3; }
+.minute-hand { width: 5px; height: 34%; background: #365c77; animation-duration: 3600s; z-index: 4; }
+.second-hand { width: 2px; height: 39%; background: #e36253; animation-duration: 60s; z-index: 5; }
+.second-hand::after { content: ""; position: absolute; top: 100%; width: 2px; height: 22px; background: inherit; }
+.center-pin { position: absolute; left: 50%; top: 50%; width: 14px; height: 14px; border: 4px solid #e36253; border-radius: 50%; background: #fff; transform: translate(-50%, -50%); z-index: 6; }
+@keyframes hand-turn {
+  from { transform: translateX(-50%) rotate(var(--start)); }
+  to { transform: translateX(-50%) rotate(calc(var(--start) + 360deg)); }
+}
+.clock.is-paused .hand { animation-play-state: paused; }
+.clock.is-resetting .hand { animation: none; }
+.controls { display: flex; gap: 10px; flex-wrap: wrap; justify-content: center; margin-top: 30px; }
+button {
+  padding: 11px 20px;
+  border: 1px solid #244e6c;
+  border-radius: 10px;
+  background: #244e6c;
+  color: white;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color .25s ease, color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+button:hover { background: #16364d; transform: translateY(-2px); box-shadow: 0 5px 12px #20344925; }
+button:active { transform: translateY(0); }
+button:focus-visible { outline: 3px solid #f0a84d; outline-offset: 4px; }
+button.secondary { color: #244e6c; background: transparent; }
+button.secondary:hover { background: #dfeaf2; }
+.clock-status { text-align: center; font-size: 13px; color: #607388; line-height: 1.6; margin: 16px 0 0; }
+@media (max-width: 480px) {
+  .page { width: calc(100% - 20px); margin: 24px auto; }
+  .card-heading { align-items: flex-start; flex-direction: column; padding: 18px; }
+  .description { padding: 18px; }
+  .sun { width: 48px; height: 48px; }
+  .cloud-one { left: 1%; transform: scale(.7); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .yacht, .wave { animation: none; }
+  button { transition: none; }
+}
+
+/* Положение цифр циферблата */
+.number-1 { --n: 1; }
+.number-2 { --n: 2; }
+.number-3 { --n: 3; }
+.number-4 { --n: 4; }
+.number-5 { --n: 5; }
+.number-6 { --n: 6; }
+.number-7 { --n: 7; }
+.number-8 { --n: 8; }
+.number-9 { --n: 9; }
+.number-10 { --n: 10; }
+.number-11 { --n: 11; }
+.number-12 { --n: 12; }
