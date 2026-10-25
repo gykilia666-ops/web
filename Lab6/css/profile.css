@@ -1,0 +1,12 @@
+/* Только новые страницы. Исходный css/style.css не изменён. */
+a.button { display: inline-block; text-align: center; text-decoration: none; }
+a:focus-visible { outline: 3px solid #8db9e8; outline-offset: 3px; }
+.page-nav { display: flex; flex-wrap: wrap; gap: 12px 24px; margin-bottom: 24px; }
+.page-nav a { color: #1760a5; }
+.work-card h2 { margin-top: 0; }
+.work-card p { line-height: 1.6; }
+.field-error { display: block; margin-top: 6px; color: #a32030; }
+.field-error:empty { display: none; }
+.profile-page [aria-invalid="true"] { outline: 2px solid #a32030; outline-offset: 2px; }
+.profile-page .field-label { display: block; }
+.profile-page .form-status[data-state="error"] { color: #a32030; }

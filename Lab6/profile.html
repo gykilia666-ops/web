@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Анкета — дополнительное задание</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/profile.css">
+  <script src="js/profile.js" defer></script>
+</head>
+<body>
+<main class="page profile-page">
+  <nav class="page-nav" aria-label="Навигация по проекту">
+    <a href="main.html">Все работы</a>
+    <a href="index.html">Лабораторная работа № 3</a>
+  </nav>
+  <header class="page-header">
+    <p class="eyebrow">Дополнительное задание</p>
+    <h1>Анкета пользователя</h1>
+    <p class="intro">Заполните сведения о себе. Поля со звёздочкой обязательны. Хобби и рассказ о себе можно не заполнять.</p>
+    <p class="demo-note">Данные проверяются в браузере, но не отправляются на сервер. После успешной проверки анкета выводится ниже, а поля очищаются.</p>
+  </header>
+  <form id="profile-form" novalidate>
+    <fieldset>
+      <legend><span class="step">01</span> Основные сведения</legend>
+      <div class="fields">
+        <div class="field">
+          <label class="field-label" for="profile-name">Имя *</label>
+          <input id="profile-name" name="name" type="text" autocomplete="given-name" maxlength="100" placeholder="Ваше имя *" required aria-describedby="name-error">
+          <small class="field-error" id="name-error"></small>
+        </div>
+        <div class="field">
+          <label class="field-label" for="profile-email">Email *</label>
+          <input id="profile-email" name="email" type="text" inputmode="email" autocomplete="email" maxlength="254" placeholder="name@example.com" required aria-describedby="email-error">
+          <small class="field-error" id="email-error"></small>
+        </div>
+        <div class="field">
+          <label class="field-label" for="profile-phone">Телефон *</label>
+          <input id="profile-phone" name="phone" type="text" inputmode="tel" autocomplete="tel" maxlength="40" placeholder="+7 (999) 123-45-67" required aria-describedby="phone-help phone-error">
+          <small id="phone-help">От 10 до 15 цифр. Допускаются плюс в начале, пробелы, скобки и дефисы.</small>
+          <small class="field-error" id="phone-error"></small>
+        </div>
+        <div class="field">
+          <label class="field-label" for="profile-education">Образование *</label>
+          <select id="profile-education" name="education" required aria-describedby="education-error">
+            <option value="">Выберите образование *</option>
+            <option value="basic">Основное общее</option>
+            <option value="secondary">Среднее общее</option>
+            <option value="vocational">Среднее профессиональное</option>
+            <option value="higher">Высшее</option>
+          </select>
+          <small class="field-error" id="education-error"></small>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend><span class="step">02</span> Пол *</legend>
+      <div class="choices">
+        <label class="choice"><input name="gender" type="radio" value="male" required aria-describedby="gender-error"> Мужской</label>
+        <label class="choice"><input name="gender" type="radio" value="female" required aria-describedby="gender-error"> Женский</label>
+      </div>
+      <small class="field-error" id="gender-error"></small>
+    </fieldset>
+    <fieldset>
+      <legend><span class="step">03</span> Хобби</legend>
+      <div class="choices">
+        <label class="choice"><input name="hobbies" type="checkbox" value="reading"> Чтение</label>
+        <label class="choice"><input name="hobbies" type="checkbox" value="sport"> Спорт</label>
+        <label class="choice"><input name="hobbies" type="checkbox" value="music"> Музыка</label>
+        <label class="choice"><input name="hobbies" type="checkbox" value="travel"> Путешествия</label>
+        <label class="choice"><input name="hobbies" type="checkbox" value="programming"> Программирование</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend><span class="step">04</span> О себе</legend>
+      <div class="field">
+        <label class="field-label" for="profile-about">Расскажите о себе</label>
+        <textarea id="profile-about" name="about" rows="5" maxlength="1000" placeholder="Интересы, занятия или другие сведения о себе" aria-describedby="about-help about-error"></textarea>
+        <small id="about-help">Необязательное поле. До 1000 символов.</small>
+        <small class="field-error" id="about-error"></small>
+      </div>
+    </fieldset>
+    <div class="actions">
+      <button class="button primary" type="submit">Проверить анкету</button>
+      <button class="button secondary" type="reset">Очистить форму</button>
+    </div>
+    <output id="profile-status" class="form-status" aria-live="polite"></output>
+  </form>
+  <section id="profile-result" class="result" aria-labelledby="result-title" tabindex="-1" hidden>
+    <h2 id="result-title">Данные анкеты</h2>
+    <p>Проверка пройдена. Поля очищены. Данные не отправлялись на сервер.</p>
+    <dl id="profile-summary"></dl>
+  </section>
+  <noscript><p class="demo-note">Для проверки и вывода анкеты необходимо включить JavaScript.</p></noscript>
+  <footer>HTML · CSS · JavaScript — без сторонних библиотек</footer>
+</main>
+</body>
+</html>

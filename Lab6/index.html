@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Продажа автомобиля — форма объявления</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+<body>
+<main class="page">
+  <header class="page-header">
+    <p class="eyebrow">Учебный проект · Вариант 5</p>
+    <h1>Продать автомобиль</h1>
+    <p class="intro">Заполните сведения об автомобиле и контакты продавца. Поля со звёздочкой обязательны.</p>
+    <p class="demo-note">Демонстрационная форма: данные проверяются в браузере, но не отправляются на сервер.</p>
+  </header>
+  <form id="car-form" action="#" method="post" enctype="multipart/form-data">
+    <fieldset>
+      <legend><span class="step">01</span> Автомобиль</legend>
+      <div class="fields">
+        <div class="field">
+          <label class="field-label" for="brand">Марка *</label>
+          <input id="brand" name="brand" type="text" list="brands" placeholder="Марка автомобиля *" aria-label="Марка автомобиля" maxlength="50" required>
+          <datalist id="brands"><option value="LADA"><option value="Toyota"><option value="Kia"><option value="Hyundai"><option value="BMW"><option value="Volkswagen"><option value="Renault"><option value="Другая"></datalist>
+        </div>
+        <div class="field">
+          <label class="field-label" for="model">Модель *</label>
+          <input id="model" name="model" type="text" placeholder="Модель автомобиля *" aria-label="Модель автомобиля" maxlength="80" required>
+        </div>
+        <div class="field">
+          <label class="field-label" for="year">Год выпуска *</label>
+          <input id="year" name="year" type="number" min="1900" step="1" placeholder="Год выпуска *" aria-label="Год выпуска" required>
+        </div>
+        <div class="field">
+          <label class="field-label" for="mileage">Пробег, км *</label>
+          <input id="mileage" name="mileage" type="number" min="0" max="9999999" step="1" placeholder="Пробег в километрах *" aria-label="Пробег в километрах" required>
+        </div>
+        <div class="field">
+          <label class="field-label" for="body-type">Тип кузова *</label>
+          <select id="body-type" name="body_type" aria-label="Тип кузова" required>
+            <option value="" disabled selected>Тип кузова *</option>
+            <optgroup label="Легковые"><option value="Седан">Седан</option><option value="Хэтчбек">Хэтчбек</option><option value="Универсал">Универсал</option><option value="Купе">Купе</option></optgroup>
+            <optgroup label="Другие"><option value="Внедорожник">Внедорожник</option><option value="Кроссовер">Кроссовер</option><option value="Минивэн">Минивэн</option><option value="Пикап">Пикап</option></optgroup>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label" for="transmission">Коробка передач *</label>
+          <select id="transmission" name="transmission" aria-label="Коробка передач" required>
+            <option value="" disabled selected>Коробка передач *</option><option value="Механика">Механика</option><option value="Автомат">Автомат</option><option value="Робот">Робот</option><option value="Вариатор">Вариатор</option>
+          </select>
+        </div>
+        <div class="field">
+          <label class="field-label" for="fuel">Тип двигателя *</label>
+          <select id="fuel" name="fuel" aria-label="Тип двигателя" required>
+            <option value="" disabled selected>Тип двигателя *</option><option value="Бензин">Бензин</option><option value="Дизель">Дизель</option><option value="Гибрид">Гибрид</option><option value="Электро">Электро</option><option value="Газ">Газ</option>
+          </select>
+        </div>
+        <div class="field" id="engine-field">
+          <label class="field-label" for="engine">Объём двигателя, л *</label>
+          <input id="engine" name="engine" type="number" min="0.1" max="20" step="0.1" placeholder="Объём двигателя, л *" aria-label="Объём двигателя в литрах" required>
+        </div>
+        <div class="field">
+          <label class="field-label" for="color">Цвет *</label>
+          <input id="color" name="color" type="text" placeholder="Цвет автомобиля *" aria-label="Цвет автомобиля" maxlength="40" required>
+        </div>
+        <div class="field">
+          <label class="field-label" for="vin">VIN, если имеется</label>
+          <input id="vin" name="vin" type="text" minlength="17" maxlength="17" pattern="[A-HJ-NPR-Za-hj-npr-z0-9]{17}" placeholder="VIN: 17 символов" aria-label="VIN автомобиля, необязательное поле" aria-describedby="vin-help" autocomplete="off">
+          <small id="vin-help">Необязательное поле. Если заполнено — 17 латинских букв и цифр, без I, O и Q.</small>
+        </div>
+      </div>
+      <div class="choice-group">
+        <p id="condition-title" class="group-title">Состояние *</p>
+        <div class="choices" role="group" aria-labelledby="condition-title">
+          <label class="choice"><input type="radio" name="condition" value="Новый" required> Новый</label>
+          <label class="choice"><input type="radio" name="condition" value="С пробегом"> С пробегом</label>
+          <label class="choice"><input type="radio" name="condition" value="Требует ремонта"> Требует ремонта</label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend><span class="step">02</span> Объявление</legend>
+      <div class="fields">
+        <div class="field">
+          <label class="field-label" for="price">Цена, ₽ *</label>
+          <input id="price" name="price" type="number" min="1000" max="1000000000" step="1" placeholder="Цена в рублях *" aria-label="Цена в рублях" required>
+        </div>
+        <div class="field">
+          <label class="field-label" for="city">Город продажи *</label>
+          <input id="city" name="city" type="text" placeholder="Город продажи *" aria-label="Город продажи" autocomplete="address-level2" maxlength="100" required>
+        </div>
+        <div class="field field-wide">
+          <label class="field-label" for="description">Описание *</label>
+          <textarea id="description" name="description" rows="5" minlength="20" maxlength="3000" placeholder="Расскажите о состоянии, обслуживании и особенностях автомобиля *" aria-label="Описание автомобиля" aria-describedby="description-help" required></textarea>
+          <small id="description-help">От 20 до 3000 символов.</small>
+        </div>
+        <div class="field">
+          <label class="field-label" for="inspection">Дата готовности к осмотру</label>
+          <span class="mobile-caption">Дата готовности к осмотру</span>
+          <input id="inspection" name="inspection" type="date" aria-label="Дата готовности к осмотру">
+        </div>
+        <div class="field">
+          <label class="field-label" for="video">Ссылка на видео</label>
+          <input id="video" name="video" type="url" placeholder="Ссылка на видео: https://…" aria-label="Ссылка на видео автомобиля">
+        </div>
+        <div class="field field-wide">
+          <label class="field-label" for="photos">Фотографии автомобиля</label>
+          <input id="photos" name="photos" type="file" accept="image/jpeg,image/png,image/webp" multiple aria-label="Фотографии автомобиля" aria-describedby="photos-help photos-status">
+          <small id="photos-help">Фотографии: до 5 файлов JPEG, PNG или WebP, каждый до 5 МБ. В демоверсии файлы не загружаются на сервер.</small>
+          <output id="photos-status" for="photos" aria-live="polite">Файлы не выбраны.</output>
+        </div>
+        <div class="field field-wide">
+          <label class="field-label" for="duration">Срок актуальности объявления</label>
+          <span class="mobile-caption">Срок актуальности объявления</span>
+          <div class="range-row"><input id="duration" name="duration" type="range" min="1" max="90" value="30" aria-label="Срок актуальности объявления в днях"><output id="duration-value" for="duration">30 дн.</output></div>
+          <small>От 1 до 90 дней.</small>
+        </div>
+      </div>
+      <div class="choice-group">
+        <p id="features-title" class="group-title">Дополнительные условия</p>
+        <div class="choices" role="group" aria-labelledby="features-title">
+          <label class="choice"><input type="checkbox" name="features" value="Торг"> Возможен торг</label>
+          <label class="choice"><input type="checkbox" name="features" value="Обмен"> Возможен обмен</label>
+          <label class="choice"><input type="checkbox" name="features" value="Сервисная книжка"> Есть сервисная книжка</label>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend><span class="step">03</span> Продавец</legend>
+      <div class="fields">
+        <div class="field">
+          <label class="field-label" for="seller-name">Имя *</label>
+          <input id="seller-name" name="seller_name" type="text" placeholder="Ваше имя *" aria-label="Имя продавца" autocomplete="name" maxlength="100" required>
+        </div>
+        <div class="field">
+          <label class="field-label" for="phone">Телефон *</label>
+          <input id="phone" name="phone" type="tel" placeholder="Телефон: +7 999 123-45-67 *" aria-label="Телефон продавца" autocomplete="tel" aria-describedby="phone-help" required>
+          <small id="phone-help">Введите от 10 до 15 цифр. Допускаются +, пробелы, скобки и дефисы.</small>
+        </div>
+        <div class="field field-wide">
+          <label class="field-label" for="email">Электронная почта *</label>
+          <input id="email" name="email" type="email" placeholder="Электронная почта *" aria-label="Электронная почта продавца" autocomplete="email" maxlength="254" required>
+        </div>
+      </div>
+      <label class="choice consent"><input id="consent" name="consent" type="checkbox" required> Подтверждаю достоверность введённых сведений и понимаю, что это учебная демоверсия.</label>
+    </fieldset>
+    <div class="actions"><button class="button primary" type="submit">Проверить объявление</button><button class="button secondary" type="reset">Очистить форму</button></div>
+    <output id="form-status" class="form-status" aria-live="polite"></output>
+  </form>
+  <section id="result" class="result" aria-labelledby="result-title" tabindex="-1" hidden>
+    <h2 id="result-title">Предпросмотр объявления</h2>
+    <p>Проверка пройдена. Объявление не опубликовано, данные остаются на этой странице.</p>
+    <dl id="summary"></dl>
+  </section>
+  <footer>HTML · CSS · JavaScript — без сторонних библиотек</footer>
+</main>
+</body>
+</html>
