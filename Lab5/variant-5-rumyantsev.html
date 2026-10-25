@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<title>Вариант 05 — Румянцев Дмитрий</title>
+<style>
+:root{--bg:#0c1019;--panel:#131a27;--line:#293244;--text:#edf1fa;--muted:#a5b0c3;--violet:#ac9bff;--mint:#8ae6c7;--red:#ff9ba8;--radius:23px}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;background:var(--bg);color:var(--text);font:15px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif;background-image:radial-gradient(ellipse at 80% 0%,#38306455,transparent 44%)}button,input,textarea{font:inherit}button,a,input,textarea,summary{-webkit-tap-highlight-color:transparent}button,a,summary{touch-action:manipulation}button{cursor:pointer}a{color:inherit;text-decoration:none}::selection{background:#8270d5;color:white}:focus-visible{outline:3px solid var(--mint);outline-offset:4px}.wrap{width:min(1180px,calc(100% - 64px));margin:auto}.top{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:25px 0;border-bottom:1px solid var(--line)}.brand{font-size:15px;font-weight:750;letter-spacing:.04em;display:flex;gap:12px;align-items:center}.logo{display:grid;place-items:center;width:36px;height:36px;background:#ac9bff1a;border:1px solid #ac9bff55;border-radius:11px;color:var(--violet);font:700 16px monospace}.top-note{color:var(--muted);font-size:12px;letter-spacing:.08em}.hero{display:grid;grid-template-columns:1fr auto;align-items:center;gap:35px;padding:62px 0 44px}.eyebrow{color:var(--mint);text-transform:uppercase;font-size:11px;font-weight:750;letter-spacing:.2em;margin:0 0 17px}.eyebrow:before{content:'';display:inline-block;width:7px;height:7px;border-radius:100%;background:var(--mint);margin-right:10px}h1{font-size:clamp(35px,5.3vw,65px);line-height:1.1;letter-spacing:-.055em;margin:0 0 20px;font-weight:720}h1 span{color:var(--violet)}.intro{color:var(--muted);max-width:600px;font-size:16px;margin:0}.author{margin-top:24px;display:flex;gap:12px;align-items:center}.avatar{width:40px;height:40px;border-radius:50%;background:linear-gradient(140deg,#b6a2ff,#6a57a2);color:#151124;display:grid;place-items:center;font-size:13px;font-weight:800}.author small{display:block;color:var(--muted);font-size:11px}.author p{margin:0;font-size:14px}.variant{height:148px;width:148px;border:1px solid #ac9bff40;border-radius:32px;background:linear-gradient(135deg,#ac9bff20,#ac9bff04);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(4deg);box-shadow:0 20px 65px #0003}.variant span{font:600 69px/1.1 monospace;letter-spacing:-.08em;color:var(--violet)}.variant small{font-size:10px;letter-spacing:.24em;color:var(--muted);margin-top:8px}.nav{display:flex;gap:10px;flex-wrap:wrap;margin:0 0 30px}.nav a{border:1px solid var(--line);border-radius:50px;padding:8px 17px;color:var(--muted);font-size:13px;transition:.2s}.nav a:hover{color:var(--text);border-color:var(--violet);background:#ac9bff0b}.section-label{display:flex;align-items:center;gap:15px;color:var(--muted);font-size:10px;letter-spacing:.2em;text-transform:uppercase;margin-bottom:18px}.section-label:after{content:'';height:1px;background:var(--line);flex:1}.grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.card{background:linear-gradient(135deg,#182131,#121925);border:1px solid var(--line);border-radius:var(--radius);padding:28px;min-width:0;position:relative;overflow:hidden}.card:before{content:'';height:2px;position:absolute;left:28px;right:28px;top:0;background:linear-gradient(90deg,var(--accent),transparent);opacity:.6}.card-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:17px}.icon{height:40px;min-width:40px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font:700 18px monospace;border:1px solid color-mix(in srgb,var(--accent) 25%,transparent)}.tag{font-size:10px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:4px 8px}h2{font-size:23px;line-height:1.3;letter-spacing:-.035em;margin:0 0 10px}.desc{color:var(--muted);font-size:13px;margin:0 0 20px;min-height:65px}.desc code{color:var(--text);background:#ffffff08;padding:1px 4px;border-radius:4px}label{display:block;font-size:12px;font-weight:600;color:#d1d9e9;margin-bottom:8px}.field{display:block;width:100%;border:1px solid #354055;background:#0c121e;border-radius:11px;color:var(--text);padding:12px 14px;outline:none;transition:border-color .2s}input.field{height:49px}textarea.field{height:80px;resize:vertical;min-height:80px;max-height:240px;font-family:ui-monospace,Consolas,monospace;font-size:13px}.field:focus{border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 12%,transparent)}.hint{color:#92a0b7;font-size:11px;margin:7px 0 14px;min-height:18px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:19px}.primary,.secondary{border-radius:9px;padding:10px 17px;font-size:12px;font-weight:700;transition:transform .15s,filter .15s}.primary{color:#111521;background:var(--accent);border:1px solid transparent}.primary:hover{filter:brightness(1.1);transform:translateY(-1px)}.secondary{background:transparent;border:1px solid #394359;color:#c5cfe0}.secondary:hover{border-color:var(--accent);color:var(--text)}.result{padding:16px;background:#0a101b88;border:1px solid #2c374a;border-radius:12px;min-height:105px;overflow-wrap:anywhere}.result-label{font-size:10px;color:var(--muted);letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px}.result-main{font-size:23px;font-weight:650;line-height:1.4;color:var(--accent);letter-spacing:-.02em}.result-detail{font-size:12px;color:var(--muted);margin-top:7px}.result.error{border-color:#ff9ba865}.result.error .result-main{color:var(--red);font-size:15px}.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:11px}.chip{font:12px ui-monospace,Consolas,monospace;padding:5px 9px;border:1px solid #344059;border-radius:6px;background:#ffffff03;color:#cdd7eb}.chip.active{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 13%,transparent);color:var(--accent)}.chip.removed{color:#ffacb7;border-color:#ff9ba840;text-decoration:line-through;background:#ff9ba808}.table-wrap{overflow:auto;max-height:245px;margin-top:12px}table{width:100%;border-collapse:collapse;font-size:12px;text-align:left;white-space:nowrap}th{font-weight:500;color:var(--muted);padding:6px 8px;border-bottom:1px solid var(--line)}td{padding:6px 8px;border-bottom:1px solid #ffffff07}td:last-child{color:var(--mint)}tr.deleted td:last-child{color:var(--red)}details{margin-top:18px;border-top:1px solid var(--line);padding-top:12px}summary{cursor:pointer;color:var(--muted);font-size:12px;user-select:none}summary:hover{color:var(--accent)}pre{white-space:pre;overflow:auto;max-height:390px;background:#090e17;border:1px solid #263044;padding:15px;border-radius:10px;color:#b9d8f0;font:11px/1.8 ui-monospace,Consolas,monospace;margin-bottom:0;tab-size:2}.notes{margin:25px 0 0;padding:20px 24px;border:1px dashed #394359;border-radius:15px;color:var(--muted);font-size:12px}.notes h3{margin:0 0 7px;color:var(--text);font-size:13px}.notes p{margin:4px 0}.footer{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:28px 0 35px;color:#8996ad;font-size:11px}.footer span:last-child{color:var(--mint)}@media(min-width:850px){.card{display:flex;flex-direction:column}.card form{margin-top:auto}.card details{margin-top:18px}}@media(max-width:750px){.wrap{width:calc(100% - 32px)}.grid{grid-template-columns:1fr}.hero{padding:38px 0 28px}.variant{width:90px;height:100px;border-radius:22px}.variant span{font-size:46px}.variant small{font-size:8px}.hero{gap:15px}.top-note{font-size:9px}.card{padding:22px}.desc{min-height:0}.footer{align-items:flex-start}.intro{font-size:14px}}@media(max-width:420px){.variant{display:none}.hero{grid-template-columns:1fr}.nav{gap:7px}.nav a{padding:7px 12px;font-size:11px}.top-note{display:none}h1{font-size:42px}.footer{flex-direction:column;gap:6px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top"><a href="#" class="brand" aria-label="В начало страницы"><span class="logo">JS</span>Практикум</a><span class="top-note">АЛГОРИТМЫ / МАССИВЫ / СТРОКИ</span></header>
+<main>
+<section class="hero" aria-labelledby="title"><div><p class="eyebrow">Практическая работа · JavaScript</p><h1 id="title">Немного кода.<br><span>Много логики.</span></h1><p class="intro">Четыре интерактивных решения варианта 5. Введите данные, запустите алгоритм и посмотрите, как он работает.</p><div class="author"><div class="avatar" aria-hidden="true">РД</div><div><small>Выполнил</small><p>Румянцев Дмитрий</p></div></div></div><div class="variant" aria-label="Вариант 5"><span>05</span><small>ВАРИАНТ</small></div></section>
+<nav class="nav" aria-label="Задания"><a href="#task1">01 · Грибы</a><a href="#task2a">02.А · Сумма</a><a href="#task2b">02.Б · Фильтрация</a><a href="#task4">04 · Палиндром</a></nav>
+<div class="section-label">Лаборатория решений</div>
+<div class="grid">
+<section class="card" id="task1" style="--accent:#b5a1ff"><div class="card-head"><span class="icon" aria-hidden="true">01</span><span class="tag">Условия</span></div><h2>Сколько грибов?</h2><p class="desc">Вывести число и слово «гриб» с правильным окончанием: «1 гриб», «2 гриба», «17 грибов». Результат также выводится в консоль браузера.</p><form id="form1" novalidate><label for="mushrooms">Количество грибов</label><input class="field" id="mushrooms" type="text" inputmode="numeric" value="21" maxlength="16" autocomplete="off" aria-describedby="hint1"><p class="hint" id="hint1">Неотрицательное целое число, например 0, 11 или 124.</p><div class="actions"><button class="primary" type="submit">Подобрать окончание ↗</button><button class="secondary" type="button" id="example1">Другой пример</button></div></form><div class="result" id="result1" role="status" aria-live="polite" aria-atomic="true"></div><details><summary>Посмотреть JavaScript</summary><pre><code id="code1"></code></pre></details></section>
+<section class="card" id="task2a" style="--accent:#8ae6c7"><div class="card-head"><span class="icon" aria-hidden="true">Σ</span><span class="tag">Массив · Часть А</span></div><h2>Сумма до границы</h2><p class="desc">Найти сумму от начала массива до последнего элемента, у которого <code>cos(x) &lt; 0</code>. Граничный элемент включается. Решение — без методов объекта Array.</p><form id="form2a" novalidate><label for="arrayA">Массив действительных чисел</label><textarea class="field" id="arrayA" spellcheck="false" aria-describedby="hint2a">1 2 3 6 4 0</textarea><p class="hint" id="hint2a">Разделители: пробел, запятая или «;». Дробная часть — через точку. Углы — в радианах.</p><div class="actions"><button class="primary" type="submit">Вычислить сумму ↗</button><button class="secondary" type="button" id="example2a">Другой пример</button></div></form><div class="result" id="result2a" role="status" aria-live="polite" aria-atomic="true"></div><details><summary>Посмотреть JavaScript</summary><pre><code id="code2a"></code></pre></details></section>
+<section class="card" id="task2b" style="--accent:#efb980"><div class="card-head"><span class="icon" aria-hidden="true">[ ]</span><span class="tag">Массив · Часть Б</span></div><h2>Убираем нечётные суммы</h2><p class="desc">Удалить элементы, у которых сумма цифр модуля целой части нечётная. Например, для −12.8: |целая часть| = 12, сумма = 3 → удалить. Используется <code>filter()</code>.</p><form id="form2b" novalidate><label for="arrayB">Массив действительных чисел</label><textarea class="field" id="arrayB" spellcheck="false" aria-describedby="hint2b">12.8 -24.6 7 33.1 0 -105.9 22</textarea><p class="hint" id="hint2b">Целая часть берётся к нулю: −12.8 → −12. Разделители — как в части А.</p><div class="actions"><button class="primary" type="submit">Отфильтровать ↗</button><button class="secondary" type="button" id="example2b">Другой пример</button></div></form><div class="result" id="result2b" role="status" aria-live="polite" aria-atomic="true"></div><details><summary>Посмотреть JavaScript</summary><pre><code id="code2b"></code></pre></details></section>
+<section class="card" id="task4" style="--accent:#8ebeff"><div class="card-head"><span class="icon" aria-hidden="true">↔</span><span class="tag">Строки</span></div><h2>Проверка на палиндром</h2><p class="desc">Проверить, читается ли слово одинаково слева направо и справа налево. Регистр не учитывается: «Казак» и «казак» дают одинаковый результат.</p><form id="form4" novalidate><label for="word">Слово для проверки</label><input class="field" id="word" type="text" value="Казак" maxlength="100" autocomplete="off" spellcheck="false" aria-describedby="hint4"><p class="hint" id="hint4">Одно слово из букв, до 100 символов. Буквы «е» и «ё» различаются.</p><div class="actions"><button class="primary" type="submit">Проверить слово ↗</button><button class="secondary" type="button" id="example4">Другой пример</button></div></form><div class="result" id="result4" role="status" aria-live="polite" aria-atomic="true"></div><details><summary>Посмотреть JavaScript</summary><pre><code id="code4"></code></pre></details></section>
+</div>
+<aside class="notes"><h3>Принятые правила</h3><p>В части А последний подходящий элемент входит в сумму. Если отрицательных косинусов нет, граница не определена — выводится сообщение, а не ноль. Сравнение выполняется строго по Math.cos(x) &lt; 0, с точностью чисел JavaScript.</p><p>Обе части задания 2 работают независимо с собственным исходным массивом. В части Б исходный массив не изменяется: filter() создаёт новый массив оставшихся элементов.</p><p>Допускается до 200 чисел в массиве, модуль каждого — не больше 9 007 199 254 740 991. Вычисления с дробями могут иметь обычную погрешность JavaScript. Нумерация заданий сохранена по документу: 1, 2 и 4.</p></aside>
+</main>
+<footer class="footer"><span>Вариант 05 · Выполнил Румянцев Дмитрий</span><span>HTML + CSS + JavaScript · Без библиотек</span></footer>
+</div>
+<noscript><p style="padding:24px;color:#ff9ba8">Для выполнения заданий включите JavaScript в настройках браузера.</p></noscript>
+<script>
+'use strict';
+function mushroomPhrase(n) {
+  const lastTwo = n % 100;
+  const last = n % 10;
+  let word = 'грибов';
+  if (lastTwo < 11 || lastTwo > 14) {
+    if (last === 1) word = 'гриб';
+    else if (last >= 2 && last <= 4) word = 'гриба';
+  }
+  return `${n} ${word}`;
+}
+
+// Часть А: только индексы и циклы, без методов Array.
+function sumToLastNegativeCosine(numbers) {
+  let lastIndex = -1;
+  for (let i = numbers.length - 1; i >= 0; i--) {
+    if (Math.cos(numbers[i]) < 0) {
+      lastIndex = i;
+      break;
+    }
+  }
+  if (lastIndex === -1) return { found: false };
+  let sum = 0;
+  for (let i = 0; i <= lastIndex; i++) sum += numbers[i];
+  return { found: true, lastIndex, sum };
+}
+
+function digitSumOfIntegerPart(number) {
+  let n = Math.abs(Math.trunc(number));
+  let sum = 0;
+  while (n > 0) {
+    sum += n % 10;
+    n = Math.floor(n / 10);
+  }
+  return sum;
+}
+
+// Часть Б: новый массив без удаляемых элементов.
+function removeOddDigitSums(numbers) {
+  return numbers.filter(number => digitSumOfIntegerPart(number) % 2 === 0);
+}
+
+function checkPalindrome(word) {
+  const normalized = word.trim().normalize('NFC').toLocaleLowerCase('ru-RU');
+  const letters = Array.from(normalized);
+  for (let left = 0, right = letters.length - 1; left < right; left++, right--) {
+    if (letters[left] !== letters[right]) return false;
+  }
+  return true;
+}
+
+// Разбор ввода также не использует методы Array.
+function parseNumbers(text) {
+  const input = text.trim();
+  if (!input) throw new Error('Введите хотя бы одно число.');
+  const tokens = input.split(/[\s,;]+/);
+  if (tokens.length > 200) throw new Error('Введите не больше 200 чисел.');
+  const numbers = [];
+  for (let i = 0; i < tokens.length; i++) {
+    if (!/^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:e[+-]?\d+)?$/i.test(tokens[i])) {
+      throw new Error(`Элемент №${i + 1}: «${tokens[i]}» — не число.`);
+    }
+    const number = Number(tokens[i]);
+    if (!Number.isFinite(number) || Math.abs(number) > Number.MAX_SAFE_INTEGER) {
+      throw new Error(`Элемент №${i + 1}: число слишком велико. Допустимый модуль — до ${Number.MAX_SAFE_INTEGER}.`);
+    }
+    numbers[i] = number;
+  }
+  return numbers;
+}
+
+const byId = id => document.getElementById(id);
+const format = value => Object.is(value, -0) ? '0' : String(value);
+
+function element(tag, className, text) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  if (text !== undefined) node.textContent = text;
+  return node;
+}
+
+function showResult(id, main, detail, error = false) {
+  const box = byId(id);
+  box.classList.toggle('error', error);
+  box.replaceChildren(
+    element('div', 'result-label', error ? 'Проверьте ввод' : 'Результат'),
+    element('div', 'result-main', main)
+  );
+  if (detail) box.append(element('div', 'result-detail', detail));
+  return box;
+}
+
+function runMushrooms() {
+  const raw = byId('mushrooms').value.trim();
+  if (!/^\d+$/.test(raw) || !Number.isSafeInteger(Number(raw))) {
+    throw new Error('Введите целое число от 0 до 9 007 199 254 740 991.');
+  }
+  const n = Number(raw);
+  const result = mushroomPhrase(n);
+  showResult('result1', result, `Последние две цифры: ${n % 100}; последняя цифра: ${n % 10}. Числа с окончанием 11–14 всегда требуют «грибов».`);
+  console.log(result);
+}
+
+function runSum() {
+  const numbers = parseNumbers(byId('arrayA').value);
+  const result = sumToLastNegativeCosine(numbers);
+  if (!result.found) {
+    showResult('result2a', 'Граница не найдена', 'В массиве нет элементов с cos(x) < 0. Сумма для заданного диапазона не определена.');
+    return;
+  }
+  const x = numbers[result.lastIndex];
+  const box = showResult('result2a', `Сумма = ${format(result.sum)}`, `Последний подходящий элемент: №${result.lastIndex + 1} (индекс ${result.lastIndex}), x = ${format(x)}, cos(x) ≈ ${Math.cos(x).toPrecision(6)}. Подсвечены все слагаемые.`);
+  const chips = element('div', 'chips');
+  for (let i = 0; i < numbers.length; i++) {
+    const chip = element('span', i <= result.lastIndex ? 'chip active' : 'chip', format(numbers[i]));
+    chip.title = `Элемент №${i + 1}${i <= result.lastIndex ? ': входит в сумму' : ': не входит в сумму'}`;
+    chips.append(chip);
+  }
+  box.append(chips);
+}
+
+function runFilter() {
+  const numbers = parseNumbers(byId('arrayB').value);
+  const filtered = removeOddDigitSums(numbers);
+  const removedCount = numbers.length - filtered.length;
+  const box = showResult('result2b', `[${filtered.map(format).join(', ')}]`, `Было: ${numbers.length} · Удалено: ${removedCount} · Осталось: ${filtered.length}. ${filtered.length ? 'Ниже — проверка каждого элемента.' : 'Все элементы удалены, получен пустой массив.'}`);
+  const wrap = element('div', 'table-wrap');
+  const table = element('table');
+  const head = document.createElement('thead');
+  const row = document.createElement('tr');
+  ['Число', '|Целая часть|', 'Σ цифр', 'Действие'].forEach(title => row.append(element('th', '', title)));
+  head.append(row);
+  const body = document.createElement('tbody');
+  numbers.forEach(number => {
+    const sum = digitSumOfIntegerPart(number);
+    const removed = sum % 2 !== 0;
+    const row = element('tr', removed ? 'deleted' : '');
+    [format(number), String(Math.abs(Math.trunc(number))), String(sum), removed ? 'Удалить' : 'Оставить'].forEach(text => row.append(element('td', '', text)));
+    body.append(row);
+  });
+  table.append(head, body);
+  wrap.append(table);
+  box.append(wrap);
+}
+
+function runPalindrome() {
+  const word = byId('word').value.trim().normalize('NFC');
+  if (!word || !/^\p{L}+$/u.test(word) || Array.from(word).length > 100) {
+    throw new Error('Введите одно слово из букв, от 1 до 100 символов, без цифр и знаков.');
+  }
+  const isPalindrome = checkPalindrome(word);
+  const normalized = word.toLocaleLowerCase('ru-RU');
+  const reversed = Array.from(normalized).reverse().join('');
+  showResult('result4', isPalindrome ? 'Да, это палиндром' : 'Нет, это не палиндром', `Слева направо: «${normalized}». Справа налево: «${reversed}». ${isPalindrome ? 'Все пары букв совпали.' : 'При чтении в обратном порядке слово изменилось.'}`);
+}
+
+function safelyRun(handler, target) {
+  try { handler(); }
+  catch (error) { showResult(target, error.message, '', true); }
+}
+
+const tasks = [
+  { form: 'form1', result: 'result1', run: runMushrooms, field: 'mushrooms', button: 'example1', examples: ['11', '2', '0', '114', '101', '124'] },
+  { form: 'form2a', result: 'result2a', run: runSum, field: 'arrayA', button: 'example2a', examples: ['0 1 6', '2 0 1', '-3.14 2.5 6 4.2 0', '1 2 3 6 4 0'] },
+  { form: 'form2b', result: 'result2b', run: runFilter, field: 'arrayB', button: 'example2b', examples: ['1 3 5 7 9', '0 22 -24.8 33', '-12.8 -0.9 101.2 999 44', '12.8 -24.6 7 33.1 0 -105.9 22'] },
+  { form: 'form4', result: 'result4', run: runPalindrome, field: 'word', button: 'example4', examples: ['JavaScript', 'топот', 'шалаш', 'Довод', 'Казак'] }
+];
+
+tasks.forEach(task => {
+  let exampleIndex = 0;
+  byId(task.form).addEventListener('submit', event => {
+    event.preventDefault();
+    safelyRun(task.run, task.result);
+  });
+  byId(task.button).addEventListener('click', () => {
+    byId(task.field).value = task.examples[exampleIndex];
+    exampleIndex = (exampleIndex + 1) % task.examples.length;
+    safelyRun(task.run, task.result);
+  });
+  byId(task.field).addEventListener('input', () => {
+    showResult(task.result, 'Данные изменены', 'Нажмите кнопку выполнения, чтобы обновить результат.');
+  });
+  safelyRun(task.run, task.result);
+});
+
+byId('code1').textContent = mushroomPhrase.toString() + '\n\n// Пример вывода в консоль:\nconsole.log(mushroomPhrase(21));';
+byId('code2a').textContent = sumToLastNegativeCosine.toString();
+byId('code2b').textContent = digitSumOfIntegerPart.toString() + '\n\n' + removeOddDigitSums.toString();
+byId('code4').textContent = checkPalindrome.toString();
+</script>
+</body>
+</html>
